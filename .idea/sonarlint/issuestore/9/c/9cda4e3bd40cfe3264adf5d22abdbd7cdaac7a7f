@@ -1,0 +1,62 @@
+
+„squid:S1192'"aDefine a constant instead of duplicating this literal "\t\t\t\t\t\"required\": true,\n" 22 times.(ëÿÌ„şÿÿÿÿ8§ìª‡Í,
+‹squid:S1192."hDefine a constant instead of duplicating this literal "\t\t\t\t\t\t\"description\": \"OK\",\n" 26 times.(¡àÿ™úÿÿÿÿ8§ìª‡Í,
+‡squid:S1192Ú"cDefine a constant instead of duplicating this literal "\t\t\t\t\t\"format\": \"int32\",\n" 3 times.(ÁÃúüÿÿÿÿ8§ìª‡Í,
+€squid:S1192¡"aDefine a constant instead of duplicating this literal "\t\t\t\t\t\"type\": \"number\"\n" 3 times.(ª…²š8§ìª‡Í,
+’squid:S1192"tDefine a constant instead of duplicating this literal "\t\t\t\t\"tags\": [\"actm-activity-controller\"],\n" 4 times.(Ë¹ô8§ìª‡Í,
+’squid:S1192ä"nDefine a constant instead of duplicating this literal "\t\t\t\t\"summary\": \"listInvoiceæ¥å£\",\n" 7 times.(î°—İøÿÿÿÿ8§ìª‡Í,
+Šsquid:S1192‡"fDefine a constant instead of duplicating this literal "\t\t\t\t\"summary\": \"sendEmail\",\n" 7 times.(ïá®™úÿÿÿÿ8§ìª‡Í,
+psquid:S1192R"SDefine a constant instead of duplicating this literal "\t\t\t\"get\": {\n" 9 times.(²¸…8§ìª‡Í,
+‰squid:S1192&"fDefine a constant instead of duplicating this literal "\t\t\t\t\t\"description\": \"req\",\n" 3 times.(ö˜¹Àüÿÿÿÿ8§ìª‡Í,
+psquid:S1192œ"LDefine a constant instead of duplicating this literal "\t\t\t},\n" 12 times.(Õ¾Òıÿÿÿÿ8§ìª‡Í,
+‚squid:S1192""dDefine a constant instead of duplicating this literal "\t\t\t\t\"produces\": [\"*/*\"],\n" 26 times.(Î«»—8§ìª‡Í,
+—squid:S1192å"sDefine a constant instead of duplicating this literal "\t\t\t\t\"description\": \"æŸ¥è¯¢å‘ç¥¨æ¥å£\",\n" 7 times.(´é€½øÿÿÿÿ8§ìª‡Í,
+squid:S1192´"[Define a constant instead of duplicating this literal "\t\t\t\t\"callerKey\": {\n" 5 times.(·ª´¸ùÿÿÿÿ8§ìª‡Í,
+‰squid:S1192ë"jDefine a constant instead of duplicating this literal "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" 7 times.(ñ‘ıÖ8§ìª‡Í,
+“squid:S1192Ò"oDefine a constant instead of duplicating this literal "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" 19 times.(¦ùùãûÿÿÿÿ8§ìª‡Í,
+~squid:S1192("[Define a constant instead of duplicating this literal "\t\t\t\t\t\"schema\": {\n" 19 times.(ÈÃœ¬ùÿÿÿÿ8§ìª‡Í,
+…squid:S1192x"bDefine a constant instead of duplicating this literal "\t\t\t\t\t\"type\": \"string\"\n" 30 times.(’ º£ÿÿÿÿÿ8§ìª‡Í,
+}squid:S1192$"_Define a constant instead of duplicating this literal "\t\t\t\t\t\"in\": \"body\",\n" 19 times.(†ˆ©8§ìª‡Í,
+|squid:S1192#"^Define a constant instead of duplicating this literal "\t\t\t\t\"parameters\": [{\n" 23 times.(Ë˜û•8§ìª‡Í,
+]squid:S1118":Add a private constructor to hide the implicit public one.(¤Şú±ÿÿÿÿÿ8Ô‹¬‡Í,
+{squid:S1192/"]Define a constant instead of duplicating this literal "\t\t\t\t\t\t\"schema\": {\n" 26 times.(®¡¢8§ìª‡Í,
+isquid:S11924"KDefine a constant instead of duplicating this literal "\t\t\t}\n" 25 times.(­ºÒï8§ìª‡Í,
+~squid:S1192È"_Define a constant instead of duplicating this literal "\t\t\t\"type\": \"object\",\n" 11 times.(ÏÁŒË8§ìª‡Í,
+squid:S1192ï"yDefine a constant instead of duplicating this literal "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" 7 times.(¡ã–ıÿÿÿÿ8§ìª‡Í,
+†squid:S1192æ"bDefine a constant instead of duplicating this literal "\t\t\t\t\t\"format\": \"int64\"\n" 7 times.(•»Ôşÿÿÿÿ8§ìª‡Í,
+›squid:S11920"}Define a constant instead of duplicating this literal "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/CarnivalResultVo\"\n" 4 times.(İšİü8§ìª‡Í,
+“squid:S1192"oDefine a constant instead of duplicating this literal "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" 7 times.(İ¬éıûÿÿÿÿ8§ìª‡Í,
+esquid:S1192"GDefine a constant instead of duplicating this literal "\t},\n" 4 times.(®¹ÖÂ8§ìª‡Í,
+}squid:S1192u"_Define a constant instead of duplicating this literal "\t\t\t\t\t\"in\": \"query\",\n" 3 times.( ÜÇû8§ìª‡Í,
+zsquid:S1192Ê"[Define a constant instead of duplicating this literal "\t\t\t\"properties\": {\n" 11 times.(ºòêÉ8§ìª‡Í,
+squid:S1192["^Define a constant instead of duplicating this literal "\t\t\t\t\t\"in\": \"path\",\n" 3 times.(Öòêøÿÿÿÿ8§ìª‡Í,
+squid:S1192·"[Define a constant instead of duplicating this literal "\t\t\t\t\"callerPwd\": {\n" 5 times.(”œøÿÿÿÿ8§ìª‡Í,
+{squid:S1192-"XDefine a constant instead of duplicating this literal "\t\t\t\t\t\"200\": {\n" 26 times.(ÃŒĞøÿÿÿÿ8§ìª‡Í,
+osquid:S11921"QDefine a constant instead of duplicating this literal "\t\t\t\t\t\t}\n" 26 times.(Ñµ¤±8§ìª‡Í,
+„squid:S1192w"aDefine a constant instead of duplicating this literal "\t\t\t\t\t\"required\": false,\n" 3 times.(”€¸áüÿÿÿÿ8§ìª‡Í,
+squid:S1192,"\Define a constant instead of duplicating this literal "\t\t\t\t\"responses\": {\n" 26 times.(¡Ê¬Áøÿÿÿÿ8§ìª‡Í,
+psquid:S11923"MDefine a constant instead of duplicating this literal "\t\t\t\t}\n" 37 times.(™¡İ¤øÿÿÿÿ8§ìª‡Í,
+›squid:S1192‘"wDefine a constant instead of duplicating this literal "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" 7 times.(ŒùŒ®ùÿÿÿÿ8§ìª‡Í,
+†squid:S1192_"cDefine a constant instead of duplicating this literal "\t\t\t\t\t\"format\": \"int32\"\n" 14 times.(¬ã¯­ÿÿÿÿÿ8§ìª‡Í,
+”squid:S1192å"vDefine a constant instead of duplicating this literal "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" 18 times.(ÙÃË\8§ìª‡Í,
+squid:S1192ì"qDefine a constant instead of duplicating this literal "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" 7 times.(»Â˜©8§ìª‡Í,
+wsquid:S1192Ø"YDefine a constant instead of duplicating this literal "\t\t\t\t\"endTime\": {\n" 3 times.(ÿÕ…38§ìª‡Í,
+Œsquid:S1192"hDefine a constant instead of duplicating this literal "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" 7 times.(ş¸İµşÿÿÿÿ8§ìª‡Í,
+zsquid:S1192ä"[Define a constant instead of duplicating this literal "\t\t\t\t\"timeStamp\": {\n" 5 times.(Ÿ›ï—8§ìª‡Í,
+squid:S1192í"[Define a constant instead of duplicating this literal "\t\t\t\t\"startTime\": {\n" 3 times.(ÖÖÒêşÿÿÿÿ8§ìª‡Í,
+‡squid:S1192^"dDefine a constant instead of duplicating this literal "\t\t\t\t\t\"type\": \"integer\",\n" 26 times.(š°Ú­ûÿÿÿÿ8§ìª‡Í,
+‰squid:S1192"eDefine a constant instead of duplicating this literal "\t\t\t\t\t\t\t\"type\": \"object\"\n" 3 times.(ˆĞÓ¥úÿÿÿÿ8§ìª‡Í,
+‡squid:S1192Ï"cDefine a constant instead of duplicating this literal "\t\t\t\t\t\"type\": \"string\",\n" 20 times.(­Ğ¥øÿÿÿÿ8§ìª‡Í,
+rsquid:S1192*"ODefine a constant instead of duplicating this literal "\t\t\t\t\t}\n" 46 times.(Ë¼óåúÿÿÿÿ8§ìª‡Í,
+…squid:S1192ı"aDefine a constant instead of duplicating this literal "\t\t\t\t\t\"type\": \"object\"\n" 3 times.(†Ìæ¤ÿÿÿÿÿ8§ìª‡Í,
+hsquid:S11925"JDefine a constant instead of duplicating this literal "\t\t},\n" 21 times.(Àùò„8§ìª‡Í,
+squid:S1192!"qDefine a constant instead of duplicating this literal "\t\t\t\t\"consumes\": [\"application/json\"],\n" 26 times.(¹µ…ó8§ìª‡Í,
+wsquid:S1192"TDefine a constant instead of duplicating this literal "\t\t\t\"post\": {\n" 7 times.(ãàÊşÿÿÿÿ8§ìª‡Í,
+fsquid:S1192"HDefine a constant instead of duplicating this literal "\t\t}\n" 6 times.(ëœÎÓ8§ìª‡Í,
+msquid:S1192Í"NDefine a constant instead of duplicating this literal "\t\t\t\t},\n" 67 times.(â¡ƒÓ8§ìª‡Í,
+‰squid:S1192”"kDefine a constant instead of duplicating this literal "\t\t\t\t\"tags\": [\"test-controller\"],\n" 3 times.(™Ç“e8§ìª‡Í,
+rsquid:S1192+"ODefine a constant instead of duplicating this literal "\t\t\t\t}],\n" 23 times.(„ëÃÄüÿÿÿÿ8§ìª‡Í,
+~squid:S1192±"_Define a constant instead of duplicating this literal "\t\t\t\t\"callerAppCode\": {\n" 5 times.(ˆÜ¦Ù8§ìª‡Í,
+‚squid:S1192%"_Define a constant instead of duplicating this literal "\t\t\t\t\t\"name\": \"req\",\n" 3 times.(µËÆÜøÿÿÿÿ8§ìª‡Í,
+Nsquid:S1444¼"*Make this "public static api2" field final(áÇœ€üÿÿÿÿ8Óÿ¬‡Í,
+‹"squid:ClassVariableVisibilityCheck¼"PMake api2 a static final constant or non-public and provide accessors if needed.(áÇœ€üÿÿÿÿ8Óÿ¬‡Í,

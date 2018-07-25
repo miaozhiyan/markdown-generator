@@ -1,0 +1,5 @@
+
+Qsquid:S1068".Remove this unused "totalPages" private field.(–žû®øÿÿÿÿ8î†ŒýÌ,
+|squid:S1450"YRemove the "totalPages" field and declare it as a local variable in the relevant methods.(–žû®øÿÿÿÿ8î†ŒýÌ,
+¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒš×›ýÿÿÿÿ8î†ŒýÌ,
+hsquid:S00119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ê÷ÐŒ8î†ŒýÌ,

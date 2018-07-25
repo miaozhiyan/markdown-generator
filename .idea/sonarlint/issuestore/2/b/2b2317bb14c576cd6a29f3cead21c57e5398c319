@@ -1,0 +1,13 @@
+
+Nsquid:S1481Á"/Remove this unused "methodBean" local variable.(‚®ß”8‡µ‡Í,
+Usquid:S1481Ş"6Remove this unused "apiDocsJsonObject" local variable.(„¿ëª8÷Ü®‡Í,
+osquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8‡µ‡Í,
+Usquid:S1135]"2Complete the task associated to this TODO comment.(ÜÎ§şùÿÿÿÿ8ßªš‚Í,
+jsquid:S1192a"LDefine a constant instead of duplicating this literal "description" 4 times.(·Ãµü8óó„Í,
+Usquid:S1135"2Complete the task associated to this TODO comment.(™æŞ–øÿÿÿÿ8ßªš‚Í,
+osquid:CommentedOutCodeLineÃ"<This block of commented-out lines of code should be removed.(şÛØçúÿÿÿÿ8‡µ‡Í,
+Nsquid:S1172O"+Remove this unused method parameter "args".(·÷»üúÿÿÿÿ8ğî¢‡Í,
+\"squid:SwitchLastCaseIsDefaultChecks""Add a default case to this switch.(ŒûÆÍùÿÿÿÿ8ãîÈ‚Í,
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(õ–ôÄùÿÿÿÿ8ßªš‚Í,
+Fsquid:S1481Â"'Remove this unused "cb" local variable.(ƒÎÃÌ8×½ğ†Í,
+dsquid:S1854Ş"ERemove this useless assignment to local variable "apiDocsJsonObject".(„¿ëª8÷Ü®‡Í,
