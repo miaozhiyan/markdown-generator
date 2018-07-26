@@ -12,6 +12,9 @@ public class RequestInterface {
     private String description;
     private List<String> consumes;
     private List<RequestParams> parameters;
+    private String requestExample;
+    private String responseExample;
+
 
     public static List<RequestInterface> map2RequestInterfaceList(Map<String,Object> paths ,Map<String,Object> definitions){
         List<RequestInterface> res = new ArrayList<>();
@@ -30,10 +33,27 @@ public class RequestInterface {
                 );
                 res.add(ri);
             }
+
         }
         return res;
     }
 
+
+    public String getRequestExample() {
+        return requestExample;
+    }
+
+    public void setRequestExample(String requestExample) {
+        this.requestExample = requestExample;
+    }
+
+    public String getResponseExample() {
+        return responseExample;
+    }
+
+    public void setResponseExample(String responseExample) {
+        this.responseExample = responseExample;
+    }
 
     public String getUri() {
         return uri;

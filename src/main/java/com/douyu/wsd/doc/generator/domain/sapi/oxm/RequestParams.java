@@ -1,5 +1,6 @@
 package com.douyu.wsd.doc.generator.domain.sapi.oxm;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ public class RequestParams {
     private String required;
     private String schema;
     private String type;
+    private String example;
 
     public static List<RequestParams> list2RequestParamsList(List<Map> parameters,Map requestDataDefinitions){
         List<RequestParams> res = new ArrayList<>();
@@ -30,9 +32,21 @@ public class RequestParams {
                         for (Map.Entry<String,Object> entry : requestParams.entrySet()){
                             Map valueMap = (Map)entry.getValue();
                             RequestParams param = new RequestParams();
-                            param.setDescription((String)valueMap.get("description"));
+                            String type = (String)valueMap.get("type");
+                            param.setType(  type );
+                            if (type.equals("string")){
+                                param.setExample((String)valueMap.get("example"));
+                            }else{
+                                try {
+                                    Double ex = (Double)valueMap.get("example");
+                                    BigDecimal bigDecimal = BigDecimal.valueOf(ex) ;
+                                    param.setExample(bigDecimal.toString());
+                                }catch (Exception e){
+                                    param.setExample((String)valueMap.get("example"));
+                                }
+                            }
+                            param.setDescription( (String)valueMap.get("description") );
                             param.setIn("body体内传的参数");
-                            param.setType(  (String)valueMap.get("type") );
                             param.setName( entry.getKey() );
                             param.setRequired( required.contains(entry.getKey())?"true":"false" );
                             res.add(param);
@@ -52,7 +66,7 @@ public class RequestParams {
                 }
                 case "query":{
                     RequestParams param = new RequestParams();
-                    param.setIn("url后穿的参数");
+                    param.setIn("url后传递参数");
                     param.setType(  (String)map.get("type") );
                     param.setDescription((String)map.get("description"));
                     param.setRequired( map.get("required").toString() );
@@ -67,6 +81,13 @@ public class RequestParams {
     }
 
 
+    public String getExample() {
+        return example;
+    }
+
+    public void setExample(String example) {
+        this.example = example;
+    }
 
     public String getType() {
         return type;
