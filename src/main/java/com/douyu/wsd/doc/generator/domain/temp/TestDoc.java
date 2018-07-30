@@ -1062,4 +1062,794 @@ public class TestDoc {
             "\t\t}\n" +
             "\t}\n" +
             "}";
+
+    public static String api3 = "{\n" +
+            "\t\"swagger\": \"2.0\",\n" +
+            "\t\"info\": {\n" +
+            "\t\t\"description\": \"发票系统描述\",\n" +
+            "\t\t\"version\": \"0.0.1\",\n" +
+            "\t\t\"title\": \"发票系统\",\n" +
+            "\t\t\"termsOfService\": \"mailto:wsd_group@douyu.tv\",\n" +
+            "\t\t\"contact\": {\n" +
+            "\t\t\t\"name\": \"缪执言\",\n" +
+            "\t\t\t\"url\": \"mailto:miaozhiyan@douyu.tv\",\n" +
+            "\t\t\t\"email\": \"miaozhiyan@douyu.tv\"\n" +
+            "\t\t}\n" +
+            "\t},\n" +
+            "\t\"host\": \"localhost:8080\",\n" +
+            "\t\"basePath\": \"/\",\n" +
+            "\t\"tags\": [{\n" +
+            "\t\t\"name\": \"invoice-controller\",\n" +
+            "\t\t\"description\": \"发票接口\"\n" +
+            "\t}],\n" +
+            "\t\"paths\": {\n" +
+            "\t\t\"/api/invoices/create\": {\n" +
+            "\t\t\t\"post\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"开票接口\",\n" +
+            "\t\t\t\t\"description\": \"开票入口接口\",\n" +
+            "\t\t\t\t\"operationId\": \"createUsingPOST\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"createInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"createInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/CreateInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/download/{serialNo}\": {\n" +
+            "\t\t\t\"get\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"下载发票接口\",\n" +
+            "\t\t\t\t\"description\": \"根据流水号下载发票\",\n" +
+            "\t\t\t\t\"operationId\": \"downloadUsingGET\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"name\": \"serialNo\",\n" +
+            "\t\t\t\t\t\"in\": \"path\",\n" +
+            "\t\t\t\t\t\"description\": \"serialNo\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResponseEntity\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/email\": {\n" +
+            "\t\t\t\"get\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingGET\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"head\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingHEAD\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"post\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingPOST\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"put\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingPUT\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"delete\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingDELETE\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"options\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingOPTIONS\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"patch\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"sendEmail\",\n" +
+            "\t\t\t\t\"operationId\": \"sendEmailUsingPATCH\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"description\": \"sendEmailReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/SendEmailReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/inventory\": {\n" +
+            "\t\t\t\"post\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"inventory\",\n" +
+            "\t\t\t\t\"operationId\": \"inventoryUsingPOST\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"req\",\n" +
+            "\t\t\t\t\t\"description\": \"req\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/InventoryReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/invoice/{serialNo}\": {\n" +
+            "\t\t\t\"get\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"查询开票信息\",\n" +
+            "\t\t\t\t\"description\": \"查询开票信息：通过流水号查询\",\n" +
+            "\t\t\t\t\"operationId\": \"getUsingGET\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"name\": \"serialNo\",\n" +
+            "\t\t\t\t\t\"in\": \"path\",\n" +
+            "\t\t\t\t\t\"description\": \"serialNo\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/listInvoice\": {\n" +
+            "\t\t\t\"get\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingGET\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"head\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingHEAD\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"post\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingPOST\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"put\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingPUT\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"delete\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingDELETE\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"options\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingOPTIONS\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t},\n" +
+            "\t\t\t\"patch\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice接口\",\n" +
+            "\t\t\t\t\"description\": \"查询发票接口\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingPATCH\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"listInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/ListInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/offset\": {\n" +
+            "\t\t\t\"post\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"offsetInvoice\",\n" +
+            "\t\t\t\t\"operationId\": \"offsetInvoiceUsingPOST\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"offsetInvoiceReq\",\n" +
+            "\t\t\t\t\t\"description\": \"offsetInvoiceReq\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/OffsetInvoiceReq\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"/api/invoices/test/listInvoice\": {\n" +
+            "\t\t\t\"post\": {\n" +
+            "\t\t\t\t\"tags\": [\"invoice-controller\"],\n" +
+            "\t\t\t\t\"summary\": \"listInvoice\",\n" +
+            "\t\t\t\t\"operationId\": \"listInvoiceUsingPOST_1\",\n" +
+            "\t\t\t\t\"consumes\": [\"application/json\"],\n" +
+            "\t\t\t\t\"produces\": [\"*/*\"],\n" +
+            "\t\t\t\t\"parameters\": [{\n" +
+            "\t\t\t\t\t\"in\": \"body\",\n" +
+            "\t\t\t\t\t\"name\": \"tttt4\",\n" +
+            "\t\t\t\t\t\"description\": \"tttt4\",\n" +
+            "\t\t\t\t\t\"required\": true,\n" +
+            "\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}],\n" +
+            "\t\t\t\t\"responses\": {\n" +
+            "\t\t\t\t\t\"200\": {\n" +
+            "\t\t\t\t\t\t\"description\": \"OK\",\n" +
+            "\t\t\t\t\t\t\"schema\": {\n" +
+            "\t\t\t\t\t\t\t\"$ref\": \"#/definitions/ResultVo\"\n" +
+            "\t\t\t\t\t\t}\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t}\n" +
+            "\t},\n" +
+            "\t\"definitions\": {\n" +
+            "\t\t\"CreateInvoiceReq\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"callerAppCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerKey\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerPwd\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"companyName\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"creditCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"description\": \"creditCode\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"details\": {\n" +
+            "\t\t\t\t\t\"type\": \"array\",\n" +
+            "\t\t\t\t\t\"description\": \"details 发票的详细清单\",\n" +
+            "\t\t\t\t\t\"items\": {\n" +
+            "\t\t\t\t\t\t\"$ref\": \"#/definitions/InvoiceDetailVo\"\n" +
+            "\t\t\t\t\t}\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"idCard\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"description\": \"idCard\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"invoiceContent\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"description\": \"invoiceContent\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"invoicePrice\": {\n" +
+            "\t\t\t\t\t\"type\": \"number\",\n" +
+            "\t\t\t\t\t\"description\": \"invoicePrice\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"nickName\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"openAccount\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"description\": \"openAccount\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"openBank\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"description\": \"openBank\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"receiverEmail\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"description\": \"email\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"test\": {\n" +
+            "\t\t\t\t\t\"$ref\": \"#/definitions/test\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"timeStamp\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"title\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"example\": \"张三\",\n" +
+            "\t\t\t\t\t\"description\": \"title\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"titleType\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"example\": \"PERSONAL, COMPANY\",\n" +
+            "\t\t\t\t\t\"description\": \"titleType\",\n" +
+            "\t\t\t\t\t\"enum\": [\"PERSONAL\", \"COMPANY\"]\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"InventoryReq\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"callerAppCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerKey\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerPwd\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"companyName\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"timeStamp\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"InvoiceDetailVo\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"lineType\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"preferentialPolicyId\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"prodAmount\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"prodCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"prodName\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"prodPrice\": {\n" +
+            "\t\t\t\t\t\"type\": \"number\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"prodPriceSum\": {\n" +
+            "\t\t\t\t\t\"type\": \"number\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"prodTaxRate\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"taxFlag\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"taxMoney\": {\n" +
+            "\t\t\t\t\t\"type\": \"number\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"ListInvoiceReq\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"callerAppCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerKey\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerPwd\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"endTime\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"pageNo\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"pageSize\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"startTime\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"status\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"enum\": [\"TEMP\", \"WAIT_FOR_PROCESS\", \"SUCCESS\", \"FAILED\", \"ALL\"]\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"timeStamp\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"OffsetInvoiceReq\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"callerAppCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerKey\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerPwd\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"serialNo\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"timeStamp\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"ResponseEntity\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"body\": {\n" +
+            "\t\t\t\t\t\"type\": \"object\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"statusCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\",\n" +
+            "\t\t\t\t\t\"enum\": [\"100\", \"101\", \"102\", \"103\", \"200\", \"201\", \"202\", \"203\", \"204\", \"205\", \"206\", \"207\", \"208\", \"226\", \"300\", \"301\", \"302\", \"303\", \"304\", \"305\", \"307\", \"308\", \"400\", \"401\", \"402\", \"403\", \"404\", \"405\", \"406\", \"407\", \"408\", \"409\", \"410\", \"411\", \"412\", \"413\", \"414\", \"415\", \"416\", \"417\", \"418\", \"419\", \"420\", \"421\", \"422\", \"423\", \"424\", \"426\", \"428\", \"429\", \"431\", \"451\", \"500\", \"501\", \"502\", \"503\", \"504\", \"505\", \"506\", \"507\", \"508\", \"509\", \"510\", \"511\"]\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"statusCodeValue\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"ResultVo\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"code\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int32\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"data\": {\n" +
+            "\t\t\t\t\t\"type\": \"object\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"errorMsg\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"SendEmailReq\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"callerAppCode\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerKey\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"callerPwd\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"receiverEmail\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"serialNo\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"timeStamp\": {\n" +
+            "\t\t\t\t\t\"type\": \"integer\",\n" +
+            "\t\t\t\t\t\"format\": \"int64\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"userName\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t},\n" +
+            "\t\t\"test\": {\n" +
+            "\t\t\t\"type\": \"object\",\n" +
+            "\t\t\t\"properties\": {\n" +
+            "\t\t\t\t\"aaa\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t},\n" +
+            "\t\t\t\t\"bbb\": {\n" +
+            "\t\t\t\t\t\"type\": \"string\"\n" +
+            "\t\t\t\t}\n" +
+            "\t\t\t}\n" +
+            "\t\t}\n" +
+            "\t}\n" +
+            "}";
 }

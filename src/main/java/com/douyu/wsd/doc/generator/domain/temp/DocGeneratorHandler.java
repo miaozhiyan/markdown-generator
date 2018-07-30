@@ -7,7 +7,6 @@ import com.douyu.wsd.doc.generator.domain.sapi.oxm.RequestInterface;
 import com.douyu.wsd.doc.generator.domain.sapi.oxm.RequestParams;
 import com.douyu.wsd.doc.generator.domain.utils.MarkdownUtil;
 import com.google.gson.Gson;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Map;
@@ -16,7 +15,7 @@ public class DocGeneratorHandler {
     public static void main(String[] args) throws MarkdownGeneratorException {
         //1.获取doc-api信息
         Gson gson = new Gson();
-        ApiDocsJsonObject apiDocsJsonObject = gson.fromJson(TestDoc.api, ApiDocsJsonObject.class);
+        ApiDocsJsonObject apiDocsJsonObject = gson.fromJson(TestDoc.api3, ApiDocsJsonObject.class);
         String host = apiDocsJsonObject.getHost();
         if (host.endsWith("/")){
             host = host.substring(0,host.length()-1);
@@ -28,7 +27,6 @@ public class DocGeneratorHandler {
         /* Todo 模拟发送请求 生成request, 获得 response 写入文档
         * */
         //4. 生成请求request
-        RestTemplate restTemplate = new RestTemplate();
         for (ControllerDocObject object : list) {
             for (RequestInterface onceReq : object.getRequestInterfaces()) {
                 String requestMethod = onceReq.getRequestMethod();
@@ -61,31 +59,20 @@ public class DocGeneratorHandler {
 
     private static String contrustReqAndReciveResponse(List<RequestParams> params, Map<String, Object> definitions,String host) {
         Integer queryNum=0;
+        StringBuilder requestBody = new StringBuilder();
+        requestBody.append("{");
         for (RequestParams param:params){
             String paramType = param.getType();
             switch (param.getIn()){
-                case "body":
+                case "body体内传的参数":
                     String requestDataRef = param.getSchema();
-                    String [] refLocationInfo = requestDataRef.split("/");
-                    if (refLocationInfo[0].equals("#") && refLocationInfo.length==3){
-                        Map requestDataMap = (Map)definitions.get("refLocationInfo[2]");
-                        Map<String,Object> requestParams = (Map)requestDataMap.get("properties");
-                        for (Map.Entry<String,Object> entry : requestParams.entrySet()){
-                            //Todo 生成requestbody
+                    if (null == requestDataRef){
+                        if ( "object".equals( param.getType() ) ){
+                            MarkdownUtil.requestJsonAddObjectParam(requestBody,param,definitions);
+                        }else{
+                            MarkdownUtil.requestJsonAddBaseParam(requestBody,param);
                         }
                     }
-
-//                        List<String> required =  (List)requestDataMap.get("required");
-//                        for (Map.Entry<String,Object> entry : requestParams.entrySet()){
-//                            Map valueMap = (Map)entry.getValue();
-//                            RequestParams param = new RequestParams();
-//                            param.setDescription((String)valueMap.get("description"));
-//                            param.setIn("body体内传的参数");
-//                            param.setType(  (String)valueMap.get("type") );
-//                            param.setName( entry.getKey() );
-//                            param.setRequired( required.contains(entry.getKey())?"true":"false" );
-//                            res.add(param);
-
                     break;
                 case "path":
                     String pathVariable = "123";
@@ -114,9 +101,9 @@ public class DocGeneratorHandler {
                     break;
             }
         }
+        requestBody.append("}");
 
         //Todo
-//        String res = restTemplate.postForObject(host+"/"+onceReq.getUri(),,String.class);
         return null;
     }
 

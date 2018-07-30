@@ -1,6 +1,7 @@
 package com.douyu.wsd.doc.generator.domain.sapi.oxm;
 
-import java.math.BigDecimal;
+import com.douyu.wsd.doc.generator.domain.utils.MarkdownUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ public class RequestParams {
     private String schema;
     private String type;
     private String example;
+    private String items_ref;
 
     public static List<RequestParams> list2RequestParamsList(List<Map> parameters,Map requestDataDefinitions){
         List<RequestParams> res = new ArrayList<>();
@@ -23,34 +25,19 @@ public class RequestParams {
             String requestInWhere = (String)map.get("in");
             switch (requestInWhere){
                 case "body":{
-                    String requestDataRef = (String)((Map)map.get("schema")).get("$ref");
-                    String [] refLocationInfo = requestDataRef.split("/");
-                    if (refLocationInfo[0].equals("#") && refLocationInfo.length==3){
-                        Map requestDataMap = (Map)requestDataDefinitions.get(refLocationInfo[2]);
-                        Map<String,Object> requestParams = (Map)requestDataMap.get("properties");
-                        List<String> required =  (List)requestDataMap.get("required");
-                        for (Map.Entry<String,Object> entry : requestParams.entrySet()){
-                            Map valueMap = (Map)entry.getValue();
-                            RequestParams param = new RequestParams();
-                            String type = (String)valueMap.get("type");
-                            param.setType(  type );
-                            if (type.equals("string")){
-                                param.setExample((String)valueMap.get("example"));
-                            }else{
-                                try {
-                                    Double ex = (Double)valueMap.get("example");
-                                    BigDecimal bigDecimal = BigDecimal.valueOf(ex) ;
-                                    param.setExample(bigDecimal.toString());
-                                }catch (Exception e){
-                                    param.setExample((String)valueMap.get("example"));
-                                }
-                            }
-                            param.setDescription( (String)valueMap.get("description") );
-                            param.setIn("body体内传的参数");
-                            param.setName( entry.getKey() );
-                            param.setRequired( required.contains(entry.getKey())?"true":"false" );
-                            res.add(param);
-                        }
+                    String outterRef = (String)((Map)map.get("schema")).get("$ref");
+                    String outterType = (String)((Map)map.get("schema")).get("type");
+                    if (null != outterRef){
+                        MarkdownUtil.recursiveGenerateRequestParamsList(requestDataDefinitions,MarkdownUtil.ref2DefinitionInfo(outterRef),res);
+                    }
+                    if ( null != outterType){
+                        RequestParams param = new RequestParams();
+                        param.setIn("body体内传的参数");
+                        param.setType(outterType);
+                        param.setDescription( (String)map.get("description") );
+                        param.setName( (String)map.get("name") );
+                        param.setRequired(map.get("required").toString() );
+                        res.add(param);
                     }
                     break;
                 }
@@ -80,6 +67,13 @@ public class RequestParams {
         return res;
     }
 
+    public String getItems_ref() {
+        return items_ref;
+    }
+
+    public void setItems_ref(String items_ref) {
+        this.items_ref = items_ref;
+    }
 
     public String getExample() {
         return example;
